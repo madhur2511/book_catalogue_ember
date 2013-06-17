@@ -8,36 +8,5 @@
   </head>
 
   <body>
-    <script type="text/x-handlebars" data-template-name="application">
-      <h1>Book Catalog</h1>
-      <hr/>
-      <div id="outer"> 
-        {{outlet}}
-      </div>
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="books">
-      {{#each book in controller}}
-          {{#linkTo "book" book}}
-           <p class="book">
-              <img {{bindAttr src= "book.url"}} alt="Image Here" height="200px" width="200px"></img>
-           </p> 
-          {{/linkTo}}
-      {{/each}}
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="book">
-      <div id="img">
-        <img {{bindAttr src= "url"}} alt="Image Here" height="200px" width="200px"></img>
-      </div>
-
-      <div id="det">
-        <h2>Name        :   {{name}}</h2>
-        <h3>Author      :   {{author}}</h3>
-        <h3>Category    :   {{category}}</h3>
-        <h3>Description :   {{description}}</h3>
-      </div>
-    </script>
-
   </body>
 </html>

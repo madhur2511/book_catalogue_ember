@@ -1,0 +1,7 @@
+{{#each book in controller}}
+  {{#linkTo "book" book}}
+   <p class="book">
+      <img {{bindAttr src= "book.url"}} alt="Image Here" height="200px" width="200px"></img>
+   </p> 
+  {{/linkTo}}
+{{/each}}
