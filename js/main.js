@@ -21,31 +21,21 @@ require.config({
 			exports:'DS'
 		}
 	}
-
 });
 
-require(['ember','routers','models','routes/BooksRoute'],function(Ember, Router, Book, BooksRoute){
+require(['ember','routers','routes/BooksRoute','routes/BookRoute','controllers/BooksController','controllers/BookController'],
+	function(Ember, Router, BooksRoute, BookRoute, BooksController, BookController){
 
 	App = Ember.Application.create();
-
 	App.Router = Router;
-
 	App.Store = DS.Store.extend({
 		revision : 11,
 		adapter  : 'DS.FixtureAdapter'
 	});
-
-	App.Book = Book;
-
-	App.BooksRoute = Ember.Route.extend({
-		model:function(){
-			return App.Book.find();
-		}
-	});
-
-	App.BookRoute = Ember.Route.extend({
-		model:function(params){
-			return App.Book.find(params.book_id);
-		}
-	});
+	
+	App.BooksController = BooksController;
+	App.BookController = BookController;
+	
+	App.BooksRoute = BooksRoute;
+	App.BookRoute = BookRoute;
 });
